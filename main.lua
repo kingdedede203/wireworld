@@ -12,7 +12,6 @@ function love.load()
 
 	local defaultData = parseFile(love.filesystem.read("string", "examples/full_adder.txt"))
 
-	initPanAndZoom(lg.getWidth(), lg.getHeight(), defaultData.width, defaultData.height)
 	initCanvas(defaultData)
 	--- @diagnostic disable-next-line: undefined-field
 	love.handlers.initCanvas = initCanvas

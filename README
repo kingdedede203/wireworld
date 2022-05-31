@@ -1,0 +1,7 @@
+WIP wireworld viewer/player written in Lua using the LÖVE framework.
+Heavily inspired by https://github.com/Rezmason/wireworld-player.
+
+This is a toy project I decided to make to learn the LÖVE framework (https://love2d.org).
+If you'd like to contribute, make a pull request with the changes/additions and I'll get back to you.
+
+Enjoy :)

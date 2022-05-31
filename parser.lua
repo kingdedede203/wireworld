@@ -22,11 +22,11 @@ function love.filedropped(file)
 end
 
 --- @param file string File content needed to be parsed
---- @return table 
+--- @return table
 function parseFile(file)
 	local width, height = file:match("^(%d+) +(%d+) *")
 	width, height = tonumber(width), tonumber(height)
-	
+
 	if width > maxWidth or height > maxHeight then
 		return
 	end

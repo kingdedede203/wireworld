@@ -27,6 +27,5 @@ function love.draw()
 
 	-- canvas
 	local xCanvas, yCanvas = worldToScreen(0, 0)
-	-- print(scaleFactor)
 	lg.draw(canvas, xCanvas, yCanvas, 0, scaleFactor, scaleFactor)
 end

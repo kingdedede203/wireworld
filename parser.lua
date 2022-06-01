@@ -24,7 +24,9 @@ end
 --- @param file string File content needed to be parsed
 --- @return table
 function parseFile(file)
-	local width, height = file:match("^(%d+) +(%d+) *")
+	local yieldLine = (file .. "\n"):gmatch("(.-)\r?\n")
+
+	local width, height = yieldLine():match("^(%d+) +(%d+) *")
 	width, height = tonumber(width), tonumber(height)
 
 	if width > maxWidth or height > maxHeight then
@@ -32,14 +34,11 @@ function parseFile(file)
 	end
 
 	local states = {}
-	local lineCounter = 0
-	for line in (file .. "\n"):gmatch("(.-)\r?\n") do
-		if lineCounter ~= 0 then
-			for i = 1, #line do
-				table.insert(states, conversionCharacters[line:sub(i, i)] or CellStates.DEAD)
-			end
+	for _ = 1, height do
+		local line = yieldLine()
+		for i = 1, width do
+			table.insert(states, conversionCharacters[line and line:sub(i, i)] or CellStates.DEAD)
 		end
-		lineCounter = lineCounter + 1
 	end
 
 	return {

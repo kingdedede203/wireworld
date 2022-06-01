@@ -10,7 +10,7 @@ function love.load()
 
 	moveCursor = love.mouse.getSystemCursor("sizeall")
 
-	local defaultData = parseFile(love.filesystem.read("string", "examples/full_adder.txt"))
+	local defaultData = parseFile(love.filesystem.read("string", "examples/wireworld_computer.txt"))
 
 	initCanvas(defaultData)
 	--- @diagnostic disable-next-line: undefined-field

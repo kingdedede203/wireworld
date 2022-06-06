@@ -18,7 +18,7 @@ function love.filedropped(file)
 			.. "Please reduce the size by removing redundant parts if any.", "warning")
 		return
 	end
-	love.event.push("initCanvas", data)
+	initCanvas(data)
 end
 
 --- @param file string File content needed to be parsed
